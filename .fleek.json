@@ -1,0 +1,14 @@
+{
+  "site": {
+    "id": "fb1f56f6-bb8b-4c08-862f-a009e84e7b04",
+    "team": "3df795ed-c0a9-4583-a451-f84892169228",
+    "platform": "ipfs",
+    "source": "ipfs",
+    "name": "metaverse-backpack-docs"
+  },
+  "build": {
+    "baseDir": "",
+    "publicDir": "public",
+    "rootDir": ""
+  }
+}

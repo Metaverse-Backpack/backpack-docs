@@ -1,0 +1,38 @@
+name: convert-to-html-and-deploy
+
+on: push
+
+jobs:
+  convert_and_deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create public folder
+        run: mkdir -p public
+
+      - name: Convert with pandoc
+        uses: docker://pandoc/core:2.16.2.0
+        with:
+          args: >-
+            --from=markdown
+            --to=html
+            --standalone
+            --self-contained
+            --table-of-contents
+            --toc-depth=4
+            --template=template/template.html
+            --css=template/template.css
+            --resource-path=.
+            --output=public/index.html
+            index.md
+
+      - name: Deploy to fleek
+        id: deploy
+        uses: fleekhq/action-deploy@v1
+        with:
+          apiKey: ${{ secrets.FLEEK_API_KEY }}
+
+      - name: Get the output url
+        run: echo "Deploy url is ${{ steps.deploy.outputs.deployUrl }}"
