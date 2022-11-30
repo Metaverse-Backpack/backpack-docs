@@ -1,6 +1,6 @@
 ---
 title: "Hammerspace"
-version: "0.0.1"
+version: "0.0.2"
 ---
 
 ## Abstract
@@ -223,3 +223,4 @@ Changes since version 0.0.1:
 - _(10/06/2022, Tobias Petrasch):_ Add ecosystem overview
 - _(10/06/2022, Tobias Petrasch):_ Change structure of Types
 - _(10/06/2022, Tobias Petrasch):_ Add avatar as a new Type
+- _(11/30/2022, Tobias Petrasch):_ Rebrand to Hammerspace
